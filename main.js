@@ -54,53 +54,109 @@ function my_keydown(e)
 
     if (keyPressed == "38")
     {
-        //car1_up();
+        car1_up();
         console.log("up")
     }
 
     if (keyPressed == "40")
     {
-        //car1_down();
+        car1_down();
         console.log("down")
     }
 
     if (keyPressed == "37")
     {
-        //car1_left();
+        car1_left();
         console.log("left")
     }
 
     if (keyPressed == "39")
     {
-        //car1_right();
+        car1_right();
         console.log("right")
     }
     
-    //zzzzzzzzzzzzzzzzzzzzzz
-    //zzzzzzzzzzzzzzzzzzzzzz
-    //zzzzzzzzzzzzzzzzzzzzzz
-
     if (keyPressed == "87")
     {
-        //car2_up();
+        car2_up();
         console.log("w")
     }
 
     if (keyPressed == "83")
     {
-        //car2_down();
+        car2_down();
         console.log("s")
     }
 
     if (keyPressed == "65")
     {
-        //car2_left();
+        car2_left();
         console.log("a")
     }
 
     if (keyPressed == "68")
     {
-        //car2_right();
+        car2_right();
         console.log("d")
     }
+}
+
+function car1_up()
+{
+    if(car1_y >= 0)
+    {
+        car1_y = car1_y - 10;
+        console.log("When up arrow is pressed,  x = " + car1_x + " | y = " + car1_y)
+        uploadBackground();
+        uploadcar1();
+        uploadcar2();
+    }   
+}
+
+function car1_down()
+{
+    if(car1_y <= 500)
+    {
+        car1_y = car1_y + 10;
+        console.log("When down arrow is pressed,  x = " + car1_x + " | y = " + car1_y)
+        uploadBackground();
+        uploadcar1();
+        uploadcar2();
+    }
+}
+
+function car1_left()
+{
+    if(car1_x <= 0)
+    {
+        car1_x = car1_x - 10;
+        console.log("When left arrow is pressed,  x = " + car1_x + " | y = " + car1_y)
+        uploadBackground();
+        uploadcar1();
+        uploadcar2();
+    }
+}
+
+function car1_right()
+{
+    if(car1_x <= 500)
+    {
+        car1_x = car1_x + 10;
+        console.log("When right arrow is pressed,  x = " + car1_x + " | y = " + car1_y)
+        uploadBackground();
+        uploadcar1();
+        uploadcar2();
+    }
+}
+
+if (car1_x > 700)
+{
+    console.log("car1 Won");
+    document.getElementById('game_status').innerHTML = "Car 1 Won!";
+}
+
+if (car2_x > 700)
+{
+    console.log("car2 Won");
+    document.getElementById('game_status').innerHTML = "Car 2 Won!";
 }
